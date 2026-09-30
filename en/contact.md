@@ -24,19 +24,19 @@ description: Contact Kurniawan, the writer behind BebasTech — open to discussi
             <div class="font-bold text-white mb-1">GitHub</div>
             <div class="text-sm text-gray-400 group-hover:text-aksen transition">github.com/bebastech</div>
         </a>
-        <a href="https://linkedin.com/in/kurniawan" target="_blank" rel="noopener" class="glass-panel rounded-3xl p-7 hover:-translate-y-1.5 transition duration-300 group reveal">
+        <a href="https://www.linkedin.com/in/kurniawan1314" target="_blank" rel="noopener" class="glass-panel rounded-3xl p-7 hover:-translate-y-1.5 transition duration-300 group reveal">
             <div class="w-12 h-12 rounded-2xl bg-aksen/10 border border-aksen/25 flex items-center justify-center text-aksen mb-5 group-hover:bg-aksen group-hover:text-utama transition">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452z"/></svg>
             </div>
             <div class="font-bold text-white mb-1">LinkedIn</div>
             <div class="text-sm text-gray-400 group-hover:text-aksen transition">Kurniawan</div>
         </a>
-        <a href="https://twitter.com/kurniawan" target="_blank" rel="noopener" class="glass-panel rounded-3xl p-7 hover:-translate-y-1.5 transition duration-300 group reveal">
+        <a href="https://x.com/kuredarmy" target="_blank" rel="noopener" class="glass-panel rounded-3xl p-7 hover:-translate-y-1.5 transition duration-300 group reveal">
             <div class="w-12 h-12 rounded-2xl bg-aksen/10 border border-aksen/25 flex items-center justify-center text-aksen mb-5 group-hover:bg-aksen group-hover:text-utama transition">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </div>
             <div class="font-bold text-white mb-1">X / Twitter</div>
-            <div class="text-sm text-gray-400 group-hover:text-aksen transition">@kurniawan</div>
+            <div class="text-sm text-gray-400 group-hover:text-aksen transition">@kuredarmy</div>
         </a>
     </div>
 </section>

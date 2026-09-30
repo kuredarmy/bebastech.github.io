@@ -4,7 +4,8 @@ title: "The World Was Fine Before AI — So What Are We Actually Chasing?"
 date: 2026-09-30
 lang: en
 description: "Before AI arrived, the world was doing just fine. So why is AI being pushed relentlessly, with no limits in sight? A reflection on what is actually being chased behind this race."
-image: /assets/img/thumb-ai.jpg
+image: /assets/img/thumb-datacenter.jpg
+image_credit: "Photo: Mdw77 / Wikimedia Commons (CC BY-SA 4.0)"
 tags: [AI, Opinion, Reflection]
 ---
 

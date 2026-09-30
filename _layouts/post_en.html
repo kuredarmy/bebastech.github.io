@@ -30,6 +30,7 @@ layout: default_en
     {% if page.image %}
     <figure class="mb-12 reveal">
         <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full rounded-3xl hero-glow object-cover aspect-video">
+        {% if page.image_credit %}<figcaption class="mt-3 text-center text-xs text-gray-500">{{ page.image_credit }}</figcaption>{% endif %}
     </figure>
     {% endif %}
 

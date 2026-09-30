@@ -4,7 +4,8 @@ title: "Dunia Baik-Baik Saja Sebelum AI — Lalu Apa yang Sebenarnya Dikejar?"
 date: 2026-09-30
 lang: id
 description: "Sebelum AI datang, dunia baik-baik saja. Lalu kenapa AI terus digenjot tanpa batas? Sebuah renungan tentang apa yang sebenarnya dikejar di balik perlombaan ini."
-image: /assets/img/thumb-ai.jpg
+image: /assets/img/thumb-datacenter.jpg
+image_credit: "Foto: Mdw77 / Wikimedia Commons (CC BY-SA 4.0)"
 tags: [AI, Opini, Renungan]
 ---
 

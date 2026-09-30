@@ -24,8 +24,6 @@ Kalau saya perhatikan, yang dikejar sepertinya bukan kebutuhan manusia — melai
 
 Ironisnya, teknologi ini katanya dibuat "untuk manusia". Tapi kapan terakhir kali manusia diajak duduk dan ditanya, *"kamu sebenarnya butuh apa?"* Kita tidak pernah diminta pendapat. Kita hanya disodori hasil balapannya, lalu dipaksa menyesuaikan hidup dengannya.
 
-Sebagai seorang ayah, ini yang paling mengusik saya. Anak saya akan tumbuh besar di dunia yang dibentuk oleh perlombaan ini — dunia yang tidak pernah mereka minta, tapi wajib mereka jalani. Mereka akan bersaing dengan mesin yang lahir dari ambisi orang-orang yang bahkan tidak mereka kenal.
-
 Jangan salah paham, saya bukan anti-AI. Seperti yang pernah saya tulis sebelumnya, AI sangat membantu pekerjaan saya sehari-hari. Tapi ada bedanya antara memakai alat dan dikejar-kejar oleh alat. Hari ini rasanya kitalah yang dikejar: dikejar update, dikejar tren, dikejar rasa takut ketinggalan.
 
 Mungkin sudah waktunya kita berhenti sejenak — bukan berhenti memakai AI, tapi berhenti sejenak untuk bertanya: semua kegilaan ini sebenarnya untuk siapa?

@@ -1,61 +1,85 @@
 ---
 layout: default
+title: Beranda
+description: BebasTech — blog opini teknologi independen. Mengupas gadget terbaru, keamanan privasi, dan isu global tanpa filter.
 ---
-<!-- Hero Section -->
-<div class="mb-20 not-prose text-center md:text-left flex flex-col md:flex-row items-center gap-10">
-    <div class="flex-1">
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight text-white">
-            Masa Depan <br><span class="text-aksen">Di Tanganmu.</span>
-        </h1>
-        <p class="text-lg text-gray-300 max-w-2xl font-light leading-relaxed mb-8">
-            Sebuah blog teknologi yang mengupas tuntas gadget terbaru, keamanan privasi, dan opini global tanpa filter.
-        </p>
-        <!-- Tombol CTA -->
-        <a href="#artikel-terbaru" class="inline-block bg-aksen text-utama font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-utama transition duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)]">
-            Jelajahi Artikel
-        </a>
-    </div>
-</div>
 
-<!-- Struktur Halaman: Daftar Artikel -->
-<div id="artikel-terbaru" class="not-prose pt-10">
-    <h2 class="text-sm font-bold tracking-widest uppercase text-aksen mb-8 flex items-center gap-4">
+<!-- ===== Hero ===== -->
+<section class="max-w-5xl mx-auto px-6 pt-14 md:pt-20 pb-10">
+    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-14">
+        <div class="flex-1 reveal">
+            <span class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-aksen bg-aksen/10 border border-aksen/25 rounded-full px-4 py-2 mb-7">
+                <span class="w-1.5 h-1.5 rounded-full bg-aksen animate-pulse"></span>
+                Blog Opini Teknologi
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] text-white mb-6">
+                Masa Depan<br><span class="text-aksen">Di Tanganmu.</span>
+            </h1>
+            <p class="text-lg text-gray-300 max-w-xl font-light leading-relaxed mb-9">
+                Sebuah blog teknologi yang mengupas tuntas gadget terbaru, keamanan privasi, dan opini global — tanpa filter.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#artikel-terbaru" class="inline-block bg-aksen text-utama font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition duration-300 shadow-[0_0_25px_rgba(16,185,129,0.45)]">
+                    Jelajahi Artikel
+                </a>
+                <a href="/about" class="inline-block font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full border border-aksen/40 text-aksen hover:bg-aksen hover:text-utama transition duration-300">
+                    Tentang Penulis
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 w-full max-w-md reveal">
+            <div class="relative">
+                <div class="absolute -inset-4 bg-aksen/15 blur-3xl rounded-full"></div>
+                <img src="/assets/img/hero.jpg" alt="Ilustrasi cermin teknologi BebasTech" class="relative w-full rounded-3xl hero-glow object-cover aspect-[4/3]">
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistik -->
+    <div class="grid grid-cols-3 gap-4 mt-16 reveal">
+        {% assign id_posts = site.posts | where: "lang", "id" %}
+        <div class="glass-panel rounded-2xl p-5 text-center">
+            <div class="text-3xl font-extrabold text-aksen">{{ id_posts | size }}</div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Artikel</div>
+        </div>
+        <div class="glass-panel rounded-2xl p-5 text-center">
+            <div class="text-3xl font-extrabold text-aksen">2</div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Bahasa</div>
+        </div>
+        <div class="glass-panel rounded-2xl p-5 text-center">
+            <div class="text-3xl font-extrabold text-aksen">100%</div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Tanpa Filter</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Katalog Artikel ===== -->
+<section id="artikel-terbaru" class="max-w-5xl mx-auto px-6 pt-14 scroll-mt-24">
+    <h2 class="text-sm font-bold tracking-[0.2em] uppercase text-aksen mb-3 flex items-center gap-4 reveal">
         <span class="w-8 h-[1px] bg-aksen inline-block"></span> Katalog Opini Terbaru
     </h2>
-    
+    <p class="text-gray-400 font-light mb-10 max-w-2xl reveal">Refleksi dan analisis mendalam seputar teknologi — ditulis dengan jujur, dari sudut pandang manusia.</p>
+
     <div class="grid md:grid-cols-2 gap-6">
         {% for post in site.posts %}
-        <div class="grid md:grid-cols-2 gap-6">
-    {% for post in site.posts %}
-    {% if post.lang == 'id' %}
-    <a href="{{ post.url }}" class="glass-panel p-8 rounded-3xl hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] transition duration-500 group flex flex-col justify-between min-h-[250px]">
-        <div>
-            <div class="text-xs font-bold tracking-widest uppercase text-aksen mb-4">
-                {{ post.date | date: "%d %b %y" }}
-            </div>
-            <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-aksen transition">{{ post.title }}</h3>
-            <p class="text-gray-400 text-sm font-medium leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-        </div>
-        <div class="mt-6 text-aksen font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
-            Baca Selengkapnya &rarr;
-        </div>
-    </a>
-    {% endif %}
-    {% endfor %}
-</div>
-
-        <a href="{{ post.url }}" class="glass-panel p-8 rounded-3xl hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] transition duration-500 group flex flex-col justify-between min-h-[250px]">
-            <div>
-                <div class="text-xs font-bold tracking-widest uppercase text-aksen mb-4">
-                    {{ post.date | date: "%d %b %y" }}
-                </div>
-                <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-aksen transition">{{ post.title }}</h3>
-                <p class="text-gray-400 text-sm font-medium leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-            </div>
-            <div class="mt-6 text-aksen font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
-                Baca Selengkapnya &rarr;
-            </div>
-        </a>
+            {% if post.lang == 'id' %}
+                {% include card.html post=post lang='id' %}
+            {% endif %}
         {% endfor %}
     </div>
-</div>
+</section>
+
+<!-- ===== CTA Penulis ===== -->
+<section class="max-w-5xl mx-auto px-6 pt-20">
+    <div class="glass-panel rounded-3xl p-10 md:p-14 text-center relative overflow-hidden reveal">
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-aksen/10 blur-3xl rounded-full pointer-events-none"></div>
+        <div class="relative">
+            <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-aksen to-emerald-800 flex items-center justify-center text-utama font-extrabold text-2xl mb-6">K</div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-4">Ditulis oleh manusia, untuk manusia.</h2>
+            <p class="text-gray-400 font-light max-w-xl mx-auto mb-8">Kenali siapa di balik opini-opini ini — seorang penggiat IT sekaligus ayah yang gelisah dengan arah teknologi.</p>
+            <a href="/about" class="inline-block bg-aksen text-utama font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition duration-300">
+                Profil Penulis
+            </a>
+        </div>
+    </div>
+</section>

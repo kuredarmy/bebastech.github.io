@@ -1,58 +1,85 @@
 ---
 layout: default_en
-title: Home - BebasTech
+title: Home
+description: BebasTech — an independent tech opinion blog. In-depth takes on the latest gadgets, digital privacy, and global issues, unfiltered.
 ---
-<!-- Hero Section -->
-<div class="mb-20 not-prose text-center md:text-left flex flex-col md:flex-row items-center gap-10">
-    <div class="flex-1">
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight text-white">
-            The Future <br><span class="text-aksen">In Your Hands.</span>
-        </h1>
-        <p class="text-lg text-gray-300 max-w-2xl font-light leading-relaxed mb-8">
-            An independent space discussing the latest gadgets, AI development, and global issues from an unfiltered perspective.
-        </p>
-    </div>
-</div>
 
-<!-- English Articles List -->
-<div id="latest-opinions" class="not-prose pt-10">
-    <h2 class="text-sm font-bold tracking-widest uppercase text-aksen mb-8 flex items-center gap-4">
+<!-- ===== Hero ===== -->
+<section class="max-w-5xl mx-auto px-6 pt-14 md:pt-20 pb-10">
+    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-14">
+        <div class="flex-1 reveal">
+            <span class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-aksen bg-aksen/10 border border-aksen/25 rounded-full px-4 py-2 mb-7">
+                <span class="w-1.5 h-1.5 rounded-full bg-aksen animate-pulse"></span>
+                Tech Opinion Blog
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] text-white mb-6">
+                The Future<br><span class="text-aksen">In Your Hands.</span>
+            </h1>
+            <p class="text-lg text-gray-300 max-w-xl font-light leading-relaxed mb-9">
+                An independent space discussing the latest gadgets, AI development, and global issues — from an unfiltered perspective.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#latest-opinions" class="inline-block bg-aksen text-utama font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition duration-300 shadow-[0_0_25px_rgba(16,185,129,0.45)]">
+                    Explore Articles
+                </a>
+                <a href="/en/about" class="inline-block font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full border border-aksen/40 text-aksen hover:bg-aksen hover:text-utama transition duration-300">
+                    About the Author
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 w-full max-w-md reveal">
+            <div class="relative">
+                <div class="absolute -inset-4 bg-aksen/15 blur-3xl rounded-full"></div>
+                <img src="/assets/img/hero.jpg" alt="BebasTech technology mirror illustration" class="relative w-full rounded-3xl hero-glow object-cover aspect-[4/3]">
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-4 mt-16 reveal">
+        {% assign en_posts = site.posts | where: "lang", "en" %}
+        <div class="glass-panel rounded-2xl p-5 text-center">
+            <div class="text-3xl font-extrabold text-aksen">{{ en_posts | size }}</div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Articles</div>
+        </div>
+        <div class="glass-panel rounded-2xl p-5 text-center">
+            <div class="text-3xl font-extrabold text-aksen">2</div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Languages</div>
+        </div>
+        <div class="glass-panel rounded-2xl p-5 text-center">
+            <div class="text-3xl font-extrabold text-aksen">100%</div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Unfiltered</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Article catalog ===== -->
+<section id="latest-opinions" class="max-w-5xl mx-auto px-6 pt-14 scroll-mt-24">
+    <h2 class="text-sm font-bold tracking-[0.2em] uppercase text-aksen mb-3 flex items-center gap-4 reveal">
         <span class="w-8 h-[1px] bg-aksen inline-block"></span> Latest Opinions
     </h2>
-    
+    <p class="text-gray-400 font-light mb-10 max-w-2xl reveal">In-depth reflections and analysis on technology — written honestly, from a human perspective.</p>
+
     <div class="grid md:grid-cols-2 gap-6">
         {% for post in site.posts %}
-        <div class="grid md:grid-cols-2 gap-6">
-    {% for post in site.posts %}
-    {% if post.lang == 'en' %}
-    <a href="{{ post.url }}" class="glass-panel p-8 rounded-3xl hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] transition duration-500 group flex flex-col justify-between min-h-[250px]">
-        <div>
-            <div class="text-xs font-bold tracking-widest uppercase text-aksen mb-4">
-                {{ post.date | date: "%d %b %y" }}
-            </div>
-            <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-aksen transition">{{ post.title }}</h3>
-            <p class="text-gray-400 text-sm font-medium leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-        </div>
-        <div class="mt-6 text-aksen font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
-            Read More &rarr;
-        </div>
-    </a>
-    {% endif %}
-    {% endfor %}
-</div>
-
-        <a href="{{ post.url }}" class="glass-panel p-8 rounded-3xl hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] transition duration-500 group flex flex-col justify-between min-h-[250px]">
-            <div>
-                <div class="text-xs font-bold tracking-widest uppercase text-aksen mb-4">
-                    {{ post.date | date: "%d %b %y" }}
-                </div>
-                <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-aksen transition">{{ post.title }}</h3>
-                <p class="text-gray-400 text-sm font-medium leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-            </div>
-            <div class="mt-6 text-aksen font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
-                Read More &rarr;
-            </div>
-        </a>
+            {% if post.lang == 'en' %}
+                {% include card.html post=post lang='en' %}
+            {% endif %}
         {% endfor %}
     </div>
-</div>
+</section>
+
+<!-- ===== Author CTA ===== -->
+<section class="max-w-5xl mx-auto px-6 pt-20">
+    <div class="glass-panel rounded-3xl p-10 md:p-14 text-center relative overflow-hidden reveal">
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-aksen/10 blur-3xl rounded-full pointer-events-none"></div>
+        <div class="relative">
+            <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-aksen to-emerald-800 flex items-center justify-center text-utama font-extrabold text-2xl mb-6">K</div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-4">Written by a human, for humans.</h2>
+            <p class="text-gray-400 font-light max-w-xl mx-auto mb-8">Meet the person behind these opinions — an IT enthusiast and a father uneasy about where technology is heading.</p>
+            <a href="/en/about" class="inline-block bg-aksen text-utama font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition duration-300">
+                Author Profile
+            </a>
+        </div>
+    </div>
+</section>

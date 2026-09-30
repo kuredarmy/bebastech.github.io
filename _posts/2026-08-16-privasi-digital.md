@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Era Baru Privasi dan Keamanan Digital"
 date: 2026-08-16
+lang: id
+description: "Tantangan terbesar 2026 bukan mencari aplikasi paling canggih, melainkan menjaga data tetap aman. Mulailah dari mengunci semua gerbang login."
+image: /assets/img/thumb-privasi.jpg
+tags: [Privasi, Keamanan]
 ---
-
-# Era Baru Privasi dan Keamanan Digital
 
 Teknologi kecerdasan buatan dan ekosistem *cloud* kini terintegrasi langsung dengan kehidupan kita sehari-hari. Mulai dari asisten virtual hingga berbagi aplikasi dalam *family group*, pertukaran data terjadi setiap detiknya.
 

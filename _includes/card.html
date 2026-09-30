@@ -1,0 +1,26 @@
+{% assign p = include.post %}
+{% assign words = p.content | number_of_words %}
+{% assign minutes = words | divided_by: 180 %}
+{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+<a href="{{ p.url }}" class="card-thumb glass-panel rounded-3xl overflow-hidden hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(16,185,129,0.18)] transition duration-500 group flex flex-col reveal">
+    <div class="overflow-hidden aspect-video bg-black/30">
+        <img src="{{ p.image | default: '/assets/img/hero.jpg' }}" alt="{{ p.title }}" class="w-full h-full object-cover" loading="lazy">
+    </div>
+    <div class="p-7 flex flex-col flex-grow">
+        <div class="flex items-center gap-3 mb-4 flex-wrap">
+            {% if p.tags and p.tags.size > 0 %}
+            <span class="text-[11px] font-bold uppercase tracking-widest text-utama bg-aksen px-3 py-1 rounded-full">{{ p.tags[0] }}</span>
+            {% endif %}
+            <span class="text-xs font-medium text-gray-400">
+                {% if include.lang == 'en' %}{{ p.date | date: "%b %d, %Y" }}{% else %}{% include tanggal.html date=p.date %}{% endif %}
+                &nbsp;·&nbsp; {% if include.lang == 'en' %}{{ minutes }} min read{% else %}{{ minutes }} mnt baca{% endif %}
+            </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-aksen transition leading-snug">{{ p.title }}</h3>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">{{ p.description }}</p>
+        <div class="mt-6 text-aksen font-bold text-sm tracking-wide flex items-center gap-2">
+            {% if include.lang == 'en' %}Read more{% else %}Baca selengkapnya{% endif %}
+            <span class="group-hover:translate-x-1.5 transition-transform">&rarr;</span>
+        </div>
+    </div>
+</a>

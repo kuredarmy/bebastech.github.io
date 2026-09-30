@@ -1,2 +1,17 @@
 title: BebasTech
-description: Ruang opini independen seputar teknologi dan inovasi.
+description: Ruang opini independen seputar teknologi, gadget, keamanan digital, dan isu global — tanpa filter.
+url: https://bebastech.web.id
+author:
+  name: Kurniawan
+  twitter: kurniawan
+  github: bebastech
+  linkedin: kurniawan
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+markdown: kramdown

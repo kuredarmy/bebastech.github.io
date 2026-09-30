@@ -1,19 +1,19 @@
 ---
-layout: default
-title: Hubungi Kami
-permalink: /kontak
-description: Hubungi Kurniawan, penulis BebasTech — terbuka untuk diskusi, pertanyaan, dan kerja sama seputar teknologi.
+layout: default_en
+title: Contact
+permalink: /en/contact
+description: Contact Kurniawan, the writer behind BebasTech — open to discussion, questions, and collaboration on technology.
 ---
 
 <section class="max-w-3xl mx-auto px-6 pt-14 md:pt-20">
     <h1 class="text-sm font-bold tracking-[0.2em] uppercase text-aksen mb-8 flex items-center gap-4 reveal">
-        <span class="w-8 h-[1px] bg-aksen inline-block"></span> Hubungi Kami
+        <span class="w-8 h-[1px] bg-aksen inline-block"></span> Contact
     </h1>
 
-    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6 reveal">Mari Berdiskusi.</h2>
+    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6 reveal">Let's Talk.</h2>
     <p class="text-lg text-gray-300 font-light leading-relaxed mb-12 max-w-2xl reveal">
-        Teknologi selalu memiliki dua sisi, dan saya selalu terbuka untuk mendengar pandangan dari sisi yang berbeda.
-        Jika Anda memiliki pertanyaan, tawaran kerja sama, atau sekadar ingin berdiskusi tentang opini-opini di BebasTech — silakan sapa saya melalui kanal di bawah ini.
+        Technology always has two sides, and I'm always open to hearing the other one.
+        If you have questions, collaboration offers, or just want to discuss the opinions on BebasTech — reach out through the channels below.
     </p>
 
     <div class="grid sm:grid-cols-3 gap-5">

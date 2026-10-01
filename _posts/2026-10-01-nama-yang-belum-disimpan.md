@@ -4,8 +4,8 @@ title: "Nama yang Belum Disimpan"
 date: 2026-10-01
 lang: id
 description: "Ketukan lewat pukul sembilan malam. Abang sol sepatu yang kiosnya sudah tutup datang membawa kabar tentang anaknya di rumah sakit — dan sebuah keputusan yang harus dibuat Laila di depan laci uang belanja."
-image: /assets/img/thumb-nama-yang-belum-disimpan.jpg
-image_credit: "Ilustrasi: dibuat dengan AI untuk BebasTech"
+image: /assets/img/thumb-nama-rupiah.jpg
+image_credit: "Foto: detikcom"
 tags: [Cerpen, Fiksi]
 ---
 

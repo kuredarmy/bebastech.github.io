@@ -4,8 +4,8 @@ title: "Resmikan Dulu, Baru Tanya AMDAL: Ketika Keputusan Mendahului Kajian"
 date: 2026-10-01
 lang: id
 description: "Groundbreaking 22 September, disetop 28 September — oleh orang yang sama. Kisah data center AI Jatiluhur dan pelajaran tentang pemimpin yang mengambil keputusan tanpa riset yang mendalam."
-image: /assets/img/thumb-jatiluhur-ai.jpg
-image_credit: "Ilustrasi: dibuat dengan AI untuk BebasTech"
+image: /assets/img/thumb-dedi-blangkon.jpg
+image_credit: "Foto: Viva.co.id"
 tags: [Opini, Kebijakan, AI]
 ---
 

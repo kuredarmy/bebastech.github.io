@@ -4,7 +4,7 @@ title: "Inaugurate First, Ask About the Environmental Permit Later: When Decisio
 date: 2026-10-01
 lang: en
 description: "Groundbreaking on September 22, halted on September 28 — by the same man. The story of the Jatiluhur AI data center, and a lesson about leaders who make decisions without deep research."
-image: /assets/img/thumb-jatiluhur-ai.webp
+image: /assets/img/thumb-jatiluhur-ai.jpg
 image_credit: "Illustration: AI-generated for BebasTech"
 tags: [Opinion, Policy, AI]
 ---

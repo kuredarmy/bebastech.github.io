@@ -4,8 +4,8 @@ title: "The Name She Never Asked"
 date: 2026-10-01
 lang: en
 description: "A knock past nine at night. The shoe repairman whose stall had closed came with news of his child in the hospital — and a decision Laila had to make in front of her grocery drawer."
-image: /assets/img/thumb-nama-yang-belum-disimpan.jpg
-image_credit: "Illustration: AI-generated for BebasTech"
+image: /assets/img/thumb-nama-rupiah.jpg
+image_credit: "Photo: detikcom"
 tags: [Short Story, Fiction]
 ---
 

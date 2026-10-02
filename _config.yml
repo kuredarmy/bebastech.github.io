@@ -3,9 +3,13 @@ description: Ruang opini independen seputar teknologi, gadget, keamanan digital,
 url: https://bebastech.web.id
 author:
   name: Kurniawan
-  twitter: kurniawan
-  github: bebastech
-  linkedin: kurniawan
+  twitter: kuredarmy
+  github: kuredarmy
+  linkedin: kurniawan1314
+
+# Shortname Disqus untuk kolom komentar (dapatkan di https://disqus.com).
+# Kosongkan untuk menyembunyikan kolom komentar.
+disqus_shortname: "bebastech-web-id"
 
 defaults:
   - scope:

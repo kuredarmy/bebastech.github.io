@@ -74,27 +74,29 @@ layout: default
     </div>
 
     <!-- Komentar -->
+    {% if site.disqus_shortname %}
     <div class="mt-16 reveal">
         <div class="glass-panel rounded-3xl p-6 md:p-8">
             <div class="text-2xl font-extrabold text-white mb-2">💬 Punya pendapat? Yuk, diskusi!</div>
-            <div class="text-sm text-gray-400 mb-6">Setuju, kurang setuju, atau punya sudut pandang lain — tulis di kolom komentar. Diskusinya santai aja, yang penting sopan. <span class="text-gray-500">(Butuh akun GitHub buat ikut berkomentar.)</span></div>
-            <script src="https://giscus.app/client.js"
-                    data-repo="kuredarmy/bebastech.github.io"
-                    data-repo-id="R_kgDOT0P77A"
-                    data-category="Announcements"
-                    data-category-id="DIC_kwDOT0P77M4DG0uY"
-                    data-mapping="pathname"
-                    data-strict="0"
-                    data-reactions-enabled="1"
-                    data-emit-metadata="0"
-                    data-input-position="bottom"
-                    data-theme="dark"
-                    data-lang="id"
-                    crossorigin="anonymous"
-                    async>
+            <div class="text-sm text-gray-400 mb-6">Setuju, kurang setuju, atau punya sudut pandang lain — tulis di kolom komentar. Diskusinya santai aja, yang penting sopan.</div>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "{{ site.url }}{{ page.url }}";
+                    this.page.identifier = "{{ page.url }}";
+                    this.language = "id";
+                };
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
             </script>
+            <noscript>Aktifkan JavaScript untuk melihat <a href="https://disqus.com/?ref_noscript">komentar yang didukung Disqus.</a></noscript>
         </div>
     </div>
+    {% endif %}
 
     <!-- Artikel terkait -->
     {% assign related = site.posts | where: "lang", page.lang %}

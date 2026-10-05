@@ -76,7 +76,7 @@ layout: default
     <!-- Reaksi pembaca -->
     <div class="glass-panel rounded-3xl p-6 md:p-8 mt-10 reveal">
         <div class="font-bold text-white mb-1">Gimana artikel ini menurutmu?</div>
-        <div class="text-sm text-gray-400 mb-5">Satu klik aja, nggak perlu login.</div>
+        <div class="text-sm text-gray-400 mb-5">Klik sekali buat vote, klik lagi buat batalin. Nggak perlu login.</div>
         <div class="bt-reactions flex items-center gap-3 flex-wrap" data-slug="{{ page.url | slugify }}">
             <button type="button" class="bt-react" data-kind="like" aria-label="Suka artikel ini">
                 <span class="text-lg leading-none">👍</span><span>Suka</span><span class="bt-count" data-count="like">0</span>
@@ -112,35 +112,47 @@ layout: default
             }catch(e){}
             return null;
         }
-        function setVote(v){try{localStorage.setItem(VKEY,v);}catch(e){}}
+        function setVote(v){try{if(v)localStorage.setItem(VKEY,v);else localStorage.removeItem(VKEY);}catch(e){}}
         function setCount(k,v){var el=box.querySelector('[data-count="'+k+'"]');if(el)el.textContent=v;}
-        function lockAll(vote){
+        var vote=getVote(), working=false;
+        function paint(){
             ['like','dislike'].forEach(function(k){
                 var b=box.querySelector('[data-kind="'+k+'"]');
                 if(!b)return;
-                b.disabled=true;
-                if(k===vote)b.classList.add('bt-voted');
+                b.classList.toggle('bt-voted',vote===k);
+                b.disabled=working;
             });
+        }
+        function apiGet(k){return fetch(BASE+'/get/'+encodeURIComponent(key(k))).then(function(r){return r.json();}).then(function(d){return (d&&typeof d.value==='number')?d.value:0;}).catch(function(){return 0;});}
+        function apiHit(k){return fetch(BASE+'/hit/'+encodeURIComponent(key(k))).then(function(r){return r.json();}).then(function(d){return (d&&typeof d.value==='number')?d.value:null;});}
+        function apiSet(k,v){return fetch(BASE+'/set/'+encodeURIComponent(key(k))+'?value='+Math.max(0,v)).then(function(r){return r.json();}).then(function(d){return (d&&typeof d.value==='number')?d.value:null;});}
+        function refresh(){['like','dislike'].forEach(function(k){apiGet(k).then(setCount.bind(null,k));});}
+        function onClick(k){
+            if(working)return;
+            working=true;paint();
+            var done=function(nv){vote=nv;setVote(nv);working=false;paint();refresh();};
+            var fail=function(){working=false;paint();refresh();};
+            if(vote===k){
+                apiGet(k).then(function(v){return apiSet(k,v-1);}).then(function(r){if(r===null)fail();else done(null);}).catch(fail);
+            }else if(vote){
+                var old=vote;
+                apiGet(old).then(function(v){return apiSet(old,v-1);}).then(function(r){
+                    if(r===null)throw new Error('set-failed');
+                    return apiHit(k);
+                }).then(function(r){if(r===null)fail();else done(k);}).catch(fail);
+            }else{
+                apiHit(k).then(function(r){if(r===null)fail();else done(k);}).catch(fail);
+            }
         }
         ['like','dislike'].forEach(function(k){
             var btn=box.querySelector('[data-kind="'+k+'"]');
             if(!btn)return;
-            fetch(BASE+'/get/'+encodeURIComponent(key(k))).then(function(r){return r.json();}).then(function(d){if(d&&typeof d.value==='number')setCount(k,d.value);}).catch(function(){});
+            btn.addEventListener('click',function(){onClick(k);});
         });
-        var vote=getVote();
-        if(vote){lockAll(vote);}
-        else{['like','dislike'].forEach(function(k){
-            var btn=box.querySelector('[data-kind="'+k+'"]');
-            btn.addEventListener('click',function(){
-                btn.disabled=true;
-                fetch(BASE+'/hit/'+encodeURIComponent(key(k))).then(function(r){return r.json();}).then(function(d){
-                    if(d&&typeof d.value==='number')setCount(k,d.value);
-                    setVote(k);lockAll(k);
-                }).catch(function(){btn.disabled=false;});
-            });
-        });}
+        paint();refresh();
     })();
     </script>
+
 
     <!-- Komentar -->
     {% if site.disqus_shortname %}

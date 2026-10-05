@@ -5,7 +5,7 @@ permalink: /about
 description: Tentang Kurniawan, penulis di balik BebasTech — opini teknologi independen, tanpa filter.
 ---
 
-<section class="max-w-2xl mx-auto px-6 pt-14 md:pt-20 pb-20">
+<section class="max-w-3xl mx-auto px-6 pt-14 md:pt-20 pb-20">
     <span class="kicker">Tentang</span>
 
     <div class="mt-7 mb-10 flex items-center gap-6">

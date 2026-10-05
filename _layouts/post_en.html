@@ -93,6 +93,7 @@ layout: default_en
         .bt-react.bt-voted{background:#10b981;color:#022c22;border-color:#10b981}
         .bt-count{opacity:.65;font-weight:700;min-width:1.25rem;text-align:center}
         .bt-react.bt-voted .bt-count{opacity:.85}
+        .bt-react:disabled:not(.bt-voted){opacity:.45}
     </style>
     <script>
     (function(){
@@ -100,23 +101,44 @@ layout: default_en
         if(!box)return;
         var slug=box.getAttribute('data-slug')||'unknown';
         var BASE='https://countapi.mileshilliard.com/api/v1';
+        var VKEY='bt_vote_'+slug;
         function key(k){return 'bebastech_'+k+'_'+slug;}
-        function voted(k){try{return localStorage.getItem('bt_vote_'+slug+'_'+k)==='1';}catch(e){return false;}}
-        function lock(k,btn){try{localStorage.setItem('bt_vote_'+slug+'_'+k,'1');}catch(e){}btn.classList.add('bt-voted');btn.disabled=true;}
+        function getVote(){
+            try{
+                var v=localStorage.getItem(VKEY);
+                if(v==='like'||v==='dislike')return v;
+                if(localStorage.getItem(VKEY+'_like')==='1')return 'like';
+                if(localStorage.getItem(VKEY+'_dislike')==='1')return 'dislike';
+            }catch(e){}
+            return null;
+        }
+        function setVote(v){try{localStorage.setItem(VKEY,v);}catch(e){}}
         function setCount(k,v){var el=box.querySelector('[data-count="'+k+'"]');if(el)el.textContent=v;}
+        function lockAll(vote){
+            ['like','dislike'].forEach(function(k){
+                var b=box.querySelector('[data-kind="'+k+'"]');
+                if(!b)return;
+                b.disabled=true;
+                if(k===vote)b.classList.add('bt-voted');
+            });
+        }
         ['like','dislike'].forEach(function(k){
             var btn=box.querySelector('[data-kind="'+k+'"]');
             if(!btn)return;
             fetch(BASE+'/get/'+encodeURIComponent(key(k))).then(function(r){return r.json();}).then(function(d){if(d&&typeof d.value==='number')setCount(k,d.value);}).catch(function(){});
-            if(voted(k)){lock(k,btn);}
-            else{btn.addEventListener('click',function(){
+        });
+        var vote=getVote();
+        if(vote){lockAll(vote);}
+        else{['like','dislike'].forEach(function(k){
+            var btn=box.querySelector('[data-kind="'+k+'"]');
+            btn.addEventListener('click',function(){
                 btn.disabled=true;
                 fetch(BASE+'/hit/'+encodeURIComponent(key(k))).then(function(r){return r.json();}).then(function(d){
                     if(d&&typeof d.value==='number')setCount(k,d.value);
-                    lock(k,btn);
+                    setVote(k);lockAll(k);
                 }).catch(function(){btn.disabled=false;});
-            });}
-        });
+            });
+        });}
     })();
     </script>
 

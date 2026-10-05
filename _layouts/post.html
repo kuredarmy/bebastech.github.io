@@ -5,78 +5,77 @@ layout: default
 {% assign minutes = words | divided_by: 180 %}
 {% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
 
-<article class="max-w-3xl mx-auto px-6 pt-12 pb-4">
-    <a href="/#artikel-terbaru" class="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-aksen transition mb-10">
-        <span>&larr;</span> Kembali ke beranda
-    </a>
+<article class="max-w-2xl mx-auto px-6 pt-10 md:pt-14 pb-8">
+    <a href="/#tulisan" class="text-sm text-ink/50 hover:text-pine transition">&larr; Semua tulisan</a>
 
-    <div class="flex items-center gap-3 mb-6 flex-wrap reveal">
+    <div class="mt-8 mb-5">
         {% if page.tags and page.tags.size > 0 %}
-        <span class="text-[11px] font-bold uppercase tracking-widest text-utama bg-aksen px-3 py-1 rounded-full">{{ page.tags[0] }}</span>
+        <span class="kicker">{{ page.tags[0] }}</span>
         {% endif %}
-        <span class="text-sm text-gray-400">{% include tanggal.html date=page.date %} &nbsp;·&nbsp; {{ minutes }} mnt baca</span>
     </div>
 
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white mb-8 reveal">{{ page.title }}</h1>
+    <h1 class="font-display text-4xl md:text-[3.25rem] font-semibold leading-[1.12] tracking-tight mb-7">{{ page.title }}</h1>
 
-    <div class="flex items-center gap-4 pb-10 mb-10 border-b border-aksen/15 reveal">
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aksen to-emerald-800 flex items-center justify-center text-utama font-extrabold text-lg">K</div>
+    <div class="flex items-center gap-3.5 pb-8 mb-9 border-b border-ink/10">
+        <div class="w-11 h-11 rounded-full border border-pine/40 bg-sand flex items-center justify-center font-display font-semibold text-lg text-pine shrink-0">K</div>
         <div>
-            <div class="font-semibold text-white text-sm">{{ site.author.name }}</div>
-            <div class="text-xs text-gray-500">Penulis BebasTech</div>
+            <div class="text-sm font-semibold">Kurniawan</div>
+            <div class="text-xs text-ink/55 mt-0.5">{% include tanggal.html date=page.date %} &nbsp;·&nbsp; {{ minutes }} mnt baca</div>
         </div>
     </div>
 
     {% if page.image %}
-    <figure class="mb-12 reveal">
-        <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full rounded-3xl hero-glow object-cover aspect-video">
-        {% if page.image_credit %}<figcaption class="mt-3 text-center text-xs text-gray-500">{{ page.image_credit }}</figcaption>{% endif %}
+    <figure class="mb-10">
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full rounded-lg border border-ink/10 object-cover aspect-video">
+        {% if page.image_credit %}<figcaption class="mt-2.5 text-xs text-ink/50">{{ page.image_credit }}</figcaption>{% endif %}
     </figure>
     {% endif %}
 
-    <div class="prose-bebas prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-aksen prose-a:underline-offset-4 prose-strong:text-white text-gray-300 font-light leading-relaxed reveal">
+    <div class="prose-bebas">
         {{ content }}
     </div>
 
     {% if page.tags and page.tags.size > 0 %}
-    <div class="flex items-center gap-2 mt-12 flex-wrap">
+    <div class="flex items-center gap-4 mt-10 flex-wrap text-sm">
         {% for tag in page.tags %}
-        <span class="text-xs font-medium text-gray-400 border border-aksen/25 rounded-full px-3 py-1.5">#{{ tag }}</span>
+        <span class="text-pine font-medium">#{{ tag }}</span>
         {% endfor %}
     </div>
     {% endif %}
 
+    <div class="flex justify-center my-12" aria-hidden="true">
+        <svg class="w-24 h-3 text-pine/50" viewBox="0 0 96 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7 Q 13 2, 24 6 T 45 7 T 66 5 T 93 6"/></svg>
+    </div>
+
     <!-- Bagikan -->
-    <div class="glass-panel rounded-3xl p-6 md:p-8 mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 reveal">
-        <div>
-            <div class="font-bold text-white mb-1">Suka dengan opini ini?</div>
-            <div class="text-sm text-gray-400">Bagikan ke teman yang perlu membacanya.</div>
-        </div>
-        <div class="flex items-center gap-3">
+    <section class="border border-ink/12 rounded-2xl p-6 md:p-8 bg-white/60">
+        <div class="font-display text-xl font-semibold mb-1">Bagikan tulisan ini</div>
+        <p class="text-sm text-ink/60 mb-5">Kirim ke seseorang yang perlu membacanya.</p>
+        <div class="flex items-center gap-3 flex-wrap">
             <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ page.url | uri_escape }}" target="_blank" rel="noopener" aria-label="Bagikan ke X"
-               class="w-10 h-10 rounded-full bg-aksen/10 border border-aksen/30 flex items-center justify-center text-aksen hover:bg-aksen hover:text-utama transition">
+               class="w-10 h-10 rounded-full border border-ink/20 flex items-center justify-center text-ink/60 hover:bg-pine hover:text-paper hover:border-pine transition">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
             <a href="https://wa.me/?text={{ page.title | uri_escape }}%20{{ site.url }}{{ page.url | uri_escape }}" target="_blank" rel="noopener" aria-label="Bagikan ke WhatsApp"
-               class="w-10 h-10 rounded-full bg-aksen/10 border border-aksen/30 flex items-center justify-center text-aksen hover:bg-aksen hover:text-utama transition">
+               class="w-10 h-10 rounded-full border border-ink/20 flex items-center justify-center text-ink/60 hover:bg-pine hover:text-paper hover:border-pine transition">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
             </a>
             <a href="https://t.me/share/url?url={{ site.url }}{{ page.url | uri_escape }}&text={{ page.title | uri_escape }}" target="_blank" rel="noopener" aria-label="Bagikan ke Telegram"
-               class="w-10 h-10 rounded-full bg-aksen/10 border border-aksen/30 flex items-center justify-center text-aksen hover:bg-aksen hover:text-utama transition">
+               class="w-10 h-10 rounded-full border border-ink/20 flex items-center justify-center text-ink/60 hover:bg-pine hover:text-paper hover:border-pine transition">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
             </a>
             <button onclick="copyLink(this)" aria-label="Salin tautan"
-               class="h-10 px-4 rounded-full bg-aksen/10 border border-aksen/30 flex items-center gap-2 text-aksen hover:bg-aksen hover:text-utama transition text-sm font-semibold">
+               class="h-10 px-4 rounded-full border border-ink/20 flex items-center gap-2 text-ink/60 hover:bg-pine hover:text-paper hover:border-pine transition text-sm font-semibold">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
                 <span data-label>Salin tautan</span>
             </button>
         </div>
-    </div>
+    </section>
 
     <!-- Reaksi pembaca -->
-    <div class="glass-panel rounded-3xl p-6 md:p-8 mt-10 reveal">
-        <div class="font-bold text-white mb-1">Gimana artikel ini menurutmu?</div>
-        <div class="text-sm text-gray-400 mb-5">Klik sekali buat vote, klik lagi buat batalin. Nggak perlu login.</div>
+    <section class="border border-ink/12 rounded-2xl p-6 md:p-8 mt-6 bg-white/60">
+        <div class="font-display text-xl font-semibold mb-1">Gimana artikel ini menurutmu?</div>
+        <p class="text-sm text-ink/60 mb-5">Klik sekali buat vote, klik lagi buat batalin. Nggak perlu login.</p>
         <div class="bt-reactions flex items-center gap-3 flex-wrap" data-slug="{{ page.url | slugify }}">
             <button type="button" class="bt-react" data-kind="like" aria-label="Suka artikel ini">
                 <span class="text-lg leading-none">👍</span><span>Suka</span><span class="bt-count" data-count="like">0</span>
@@ -85,15 +84,15 @@ layout: default
                 <span class="text-lg leading-none">👎</span><span>Kurang suka</span><span class="bt-count" data-count="dislike">0</span>
             </button>
         </div>
-    </div>
+    </section>
     <style>
-        .bt-react{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.25rem;border-radius:9999px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);color:#fff;font-weight:600;font-size:.875rem;cursor:pointer;transition:all .2s ease}
-        .bt-react:hover:not(:disabled){background:#10b981;color:#022c22;border-color:#10b981}
+        .bt-react{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.25rem;border-radius:9999px;background:#fff;border:1px solid rgba(27,23,18,.2);color:#1B1712;font-weight:600;font-size:.875rem;cursor:pointer;transition:all .2s ease}
+        .bt-react:hover:not(:disabled){background:#1E5B44;color:#FAF6EF;border-color:#1E5B44}
         .bt-react:disabled{cursor:default}
-        .bt-react.bt-voted{background:#10b981;color:#022c22;border-color:#10b981}
-        .bt-count{opacity:.65;font-weight:700;min-width:1.25rem;text-align:center}
-        .bt-react.bt-voted .bt-count{opacity:.85}
+        .bt-react.bt-voted{background:#1E5B44;color:#FAF6EF;border-color:#1E5B44}
         .bt-react:disabled:not(.bt-voted){opacity:.45}
+        .bt-count{opacity:.65;font-weight:700;min-width:1.25rem;text-align:center}
+        .bt-react.bt-voted .bt-count{opacity:.9}
     </style>
     <script>
     (function(){
@@ -153,51 +152,56 @@ layout: default
     })();
     </script>
 
-
     <!-- Komentar -->
     {% if site.disqus_shortname %}
-    <div class="mt-16 reveal">
-        <div class="glass-panel rounded-3xl p-6 md:p-8">
-            <div class="text-2xl font-extrabold text-white mb-2">💬 Punya pendapat? Yuk, diskusi!</div>
-            <div class="text-sm text-gray-400 mb-6">Setuju, kurang setuju, atau punya sudut pandang lain — tulis di kolom komentar. Diskusinya santai aja, yang penting sopan.</div>
-            <div id="disqus_thread"></div>
-            <script>
-                var disqus_config = function () {
-                    this.page.url = "{{ site.url }}{{ page.url }}";
-                    this.page.identifier = "{{ page.url }}";
-                    this.language = "id";
-                };
-                (function() {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Aktifkan JavaScript untuk melihat <a href="https://disqus.com/?ref_noscript">komentar yang didukung Disqus.</a></noscript>
-        </div>
-    </div>
+    <section class="mt-6 border border-ink/12 rounded-2xl p-6 md:p-8 bg-white/60">
+        <div class="font-display text-xl font-semibold mb-1">Punya pendapat lain?</div>
+        <p class="text-sm text-ink/60 mb-6">Tulis di bawah. Beda pendapat tidak apa-apa, yang penting beradab.</p>
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = "{{ site.url }}{{ page.url }}";
+                this.page.identifier = "{{ page.url }}";
+                this.language = "id";
+            };
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Aktifkan JavaScript untuk melihat <a href="https://disqus.com/?ref_noscript">komentar yang didukung Disqus.</a></noscript>
+    </section>
     {% endif %}
+
+    <div class="flex justify-center my-12" aria-hidden="true">
+        <svg class="w-24 h-3 text-pine/50" viewBox="0 0 96 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7 Q 13 2, 24 6 T 45 7 T 66 5 T 93 6"/></svg>
+    </div>
 
     <!-- Artikel terkait -->
     {% assign related = site.posts | where: "lang", page.lang %}
     {% assign has_related = false %}
     {% for rp in related %}{% if rp.url != page.url %}{% assign has_related = true %}{% endif %}{% endfor %}
     {% if has_related %}
-    <div class="mt-16">
-        <h2 class="text-sm font-bold tracking-widest uppercase text-aksen mb-8 flex items-center gap-4">
-            <span class="w-8 h-[1px] bg-aksen inline-block"></span> Artikel Terkait
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
+    <section>
+        <div class="flex items-center gap-4 mb-3">
+            <span class="kicker">Tulisan terkait</span>
+            <span class="h-px flex-1 bg-ink/12"></span>
+        </div>
+        <div>
             {% assign shown = 0 %}
             {% for rp in related %}
-                {% if rp.url != page.url and shown < 2 %}
-                    {% include card.html post=rp lang='id' %}
+                {% if rp.url != page.url and shown < 3 %}
+                    <a href="{{ rp.url }}" class="group flex items-baseline gap-4 py-3.5 border-b border-ink/10">
+                        <span class="font-display text-lg leading-snug group-hover:text-pine transition">{{ rp.title }}</span>
+                        <span class="ml-auto text-xs text-ink/45 shrink-0">{% include tanggal.html date=rp.date %}</span>
+                    </a>
                     {% assign shown = shown | plus: 1 %}
                 {% endif %}
             {% endfor %}
         </div>
-    </div>
+    </section>
     {% endif %}
 
 </article>

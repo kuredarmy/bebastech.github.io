@@ -5,7 +5,7 @@ permalink: /kontak
 description: Hubungi Kurniawan, penulis BebasTech — terbuka untuk diskusi, pertanyaan, dan kolaborasi soal teknologi.
 ---
 
-<section class="max-w-2xl mx-auto px-6 pt-14 md:pt-20 pb-20">
+<section class="max-w-3xl mx-auto px-6 pt-14 md:pt-20 pb-20">
     <span class="kicker">Kontak</span>
     <h1 class="font-display text-4xl md:text-5xl font-semibold tracking-tight mt-6 mb-5">Mari berdiskusi.</h1>
     <p class="font-serif text-lg text-ink/65 leading-relaxed mb-10 max-w-xl">

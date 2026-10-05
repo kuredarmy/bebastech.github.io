@@ -5,7 +5,7 @@ permalink: /en/contact
 description: Contact Kurniawan, the writer behind BebasTech — open to discussion, questions, and collaboration on technology.
 ---
 
-<section class="max-w-2xl mx-auto px-6 pt-14 md:pt-20 pb-20">
+<section class="max-w-3xl mx-auto px-6 pt-14 md:pt-20 pb-20">
     <span class="kicker">Contact</span>
     <h1 class="font-display text-4xl md:text-5xl font-semibold tracking-tight mt-6 mb-5">Let's talk.</h1>
     <p class="font-serif text-lg text-ink/65 leading-relaxed mb-10 max-w-xl">
